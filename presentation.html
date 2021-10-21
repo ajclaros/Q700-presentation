@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Dynamic Reconfiguration Of Brain Networks During Learning</title>
+<meta name="author" content="Andrew Claros"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./dist/reveal.css"/>
+
+<link rel="stylesheet" href="./dist/theme/beige.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<section class="title-slide">    <h1>Dynamic Reconfiguration Of Brain Networks During Learning</h1>  <h4>Andrew Claros</h4> </section>
+</section>
+<p>
+#+REVEAL_DEFAULT_FRAG_STYLE frag:t
+</p>
+<section>
+<section id="slide-org7c5a91b">
+<h2 id="org7c5a91b">Introduction</h2>
+<ul data-fragment-index="1 2" class="fragment">
+<li>The brain must be able to use its existing architecture to adapt to its learning environment.</li>
+<li>This adaptation happens over various time scales</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org7e1336a">
+<h2 id="org7e1336a">Hypothesis</h2>
+<ul>
+<li class="fragment appear">Based on studies of modularity, it was expected that FN of motor skill learning would display modular structure over various temporal scales</li>
+<li class="fragment appear">Modular structure should change over time during learning, and the characteristics would be associated with learning success</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org02522fe">
+<h2 id="org02522fe">Structure of investigation</h2>
+<div class="columns"><img class="top" src="structureofinvestigation.png" height="600" width="600"> </div>
+<ul>
+<li class="fragment appear">For each time window (days, hours, minutes):</li>
+<li class="fragment appear">Parcilated fMRI data into 112 corticle structures</li>
+<li class="fragment appear">Generated FC and created a subject-specific weighted functional brain network</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org2800fb5">
+<h2 id="org2800fb5">Identify static modular structure</h2>
+<div class="columns"><img class="top" src="modularity.png" height="600" width="1000"> </div>
+<ul class="fragment appear">
+<li>At each time point they used the modularity maximization to identify the modularity of the FN. Each time subject&rsquo;s FN had significantly more modularity than a random network</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org9860c10">
+<h2 id="org9860c10">Dynamic modular structure</h2>
+<div class="columns"><img class="top" src="temporaldynamics.png" height="600" width="600"> </div>
+<ul>
+<li class="fragment appear">Assessed modular structure of network over time and constructed three null models</li>
+<li class="fragment appear">connectional null model: scrambles links between nodes in each time window</li>
+<li class="fragment appear">nodal null model: a node in one time window to a randomly chosen node in the previous and next time window</li>
+<li class="fragment appear">temporal null model, which we identified by comparing the true multilayer network to a temporally permuted network.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgdc98e95">
+<h2 id="orgdc98e95">Investigation of flexibility</h2>
+<div class="columns"><img class="top" src="flexibilityandlearning.png" height="600" width="600"> </div>
+<ul>
+<li class="fragment appear">Defined as the amount of times a node changes module alliance normalized by total possible changes</li>
+<li class="fragment appear">Flexibility of the network is defined as the mean flexibility over all nodes</li>
+<li class="fragment appear">Expected to use an individual&rsquo;s flexibility in on session as a predictor of learning for the next session.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org2557172">
+<h2 id="org2557172">Investigation of flexibility</h2>
+<div class="columns"><img class="top" src="flexibilityandlearning.png" height="600" width="600"> </div>
+<ul>
+<li class="fragment appear">Regions that were most responsible for predictive power in learning were primarily located in the presupplementary motor, posterior parietal and occipital cortices</li>
+<li class="fragment appear">They were not able to predict learning however</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org4aff61f">
+<h2 id="org4aff61f">Conclusions (modularity of functional connectivity)</h2>
+<ul>
+<li class="fragment appear">Functional connectivity in learning is segregated into communities that vary over various time scales (days, hours, minutes)</li>
+<li class="fragment appear">Connectivity at the shortest time scale exhibited the highest variability</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgf5dfab1">
+<h2 id="orgf5dfab1">Conclusions (Dynamic network evolution)</h2>
+<ul>
+<li class="fragment appear">Community organization changed smoothly over time</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgce410e5">
+<h2 id="orgce410e5">Conclusions (Dynamic network evolution)</h2>
+<p>
+Diverse regions of the brain performed different roles within communities:
+</p>
+<ul>
+<li class="fragment appear">Some maintain community structure</li>
+<li class="fragment appear">Others constantly shift their alliance</li>
+<li class="fragment appear">Learning motor skills induce changes in both structure and connectivity, increasing excitability and decreasing inhibition of neural circuits</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3695e2f">
+<h2 id="org3695e2f">Conclusion (Flexibility)</h2>
+<ul>
+<li class="fragment appear">Modular structure varied across individuals but was also shown to be consistent in the whole group</li>
+<li class="fragment appear">Flexibility might be characterized by noise - as in signal variability supports mental effort in cognitive operations</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org14a2fbc">
+<h2 id="org14a2fbc">Comments</h2>
+<ul>
+<li class="fragment appear">High variablility in lower time scales may not be because of learning.</li>
+<li class="fragment appear">Can we verify permanent learning over longer time scales? (try same task again at a much later time point and verify its &ldquo;signature&rdquo;)</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./dist/reveal.js"></script>
+<script src="./plugin/markdown/markdown.js"></script>
+<script src="./plugin/notes/notes.js"></script>
+<script src="./plugin/search/search.js"></script>
+<script src="./plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1440,
+height: 2560,
+margin: 0.05,
+minScale: 1.50,
+maxScale: 5.50,
+
+transition: 'nil',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
