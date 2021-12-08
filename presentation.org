@@ -1,0 +1,90 @@
+#+Title: Benchmarking the Reinforcement Learning Rule for Chaotically Varying Synaptic Weights
+#+Author: Andrew Claros
+
+#+OPTIONS: toc:nil num:nil date:nil
+#+LATEX_HEADER: \usepackage[margin=0.5in]{geometry}
+#+LATEX_HEADER: \include{preamble}
+#+LATEX_HEADER: \usepackage{cancel}
+#+LATEX_HEADER: \usepackage{mathtools}
+#+LATEX_HEADER: \usepackage{mathrsfs}
+
+#+REVEAL_ROOT: ./
+
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1440 reveal_height:2560
+#+OPTIONS: toc:nil
+#+OPTIONS: ^:{}
+#+REVEAL_MARGIN: 0.05
+#+REVEAL_MIN_SCALE: 1.5
+#+REVEAL_MAX_SCALE: 5.5
+#+REVEAL_TRANS: cube
+#+REVEAL_THEME: beige
+#+REVEAL_TITLE_SLIDE: <section class="title-slide">    <h1>%t</h1>  <h4>Andrew Claros</h4> </section>
+* Neuron anatomy
+#+REVEAL_TRANS: nil
+#+REVEAL_HTML:<div class="columns"><img class="top" src="./images/dendritic-spine.png" height="700" width="600"> </div>
+#+ATTR_REVEAL: :frag t :frag_idx 1
+* Artificial Neural Network:
+
+#+ATTR_REVEAL: :frag appear
+#+ATTR_REVEAL: :frag t :frag_idx 1
+#+REVEAL_HTML:<div class="columns"><img class="top" src="./images/ANN.jpeg" height="300" width="500"> </div>
+* Gradient Descent
+#+ATTR_REVEAL: :frag appear
+#+ATTR_REVEAL: :frag t :frag_idx 1
+#+REVEAL_HTML:<div class="columns"><img class="top" src="./images/gradient-descent.png" height="700" width="800"> </div>
+* Chaotically Varying Synaptic Weights
+- $W(t) = A\sin{2\pi \frac{t-\sum_{0}^{i}T_{i}}{T_{i}}}+C$
+- Phase of sine: $T_{i} \in Normal(\mu,\sigma)$
+
+* Chaotically Varying Synaptic Weights
+
+#+ATTR_REVEAL: :frag appear
+#+ATTR_REVEAL: :frag (appear) :frag_idx (2 1)
+- [[./images/wi_nocenter.png]]
+- $W(t) = 1\sin{2\pi \frac{t-\sum_{0}^{i}T_{i}}{T_{i}}}+0$
+* Updating Weight Amplitude and Center
+
+#+ATTR_REVEAL: :frag appear
+#+ATTR_REVEAL: :frag (appear) :frag_idx (1 2 3)
+- Change in Center: $\dot{C}=\alpha(W(t)-C)R(t)$
+- Change in Amplitude: $\dot{A}= -\beta R(t)$
+- Reward function: $R(t)= sign(f(W(t))-f(C(t-1)))$
+
+* Example:
+[[./images/sample_singauss.png]]
+* Example:
+[[./images/sample_singaussresult.png]]
+* Updating Weight Amplitude and Center
+
+#+ATTR_REVEAL: :frag appear
+#+ATTR_REVEAL: :frag t :frag_idx 4
+- [[./images/wi_center.png]]
+#+ATTR_REVEAL: :frag t :frag_idx 1
+Change in Center: $\dot{C}=\alpha(W(t)-C)R(t)$ \\
+Change in Amplitude: $\dot{A}= -\beta R(t)$ \\
+Reward function: $R(t)= sign(f(W(t))-f(W(t-1)))$
+
+* 1D benchmarks
+#+REVEAL_HTML:<div class="columns"><img class="top" src="./images/fig1_plots.png" height="700" width="700"> </div>
+* 1D results
+
+#+REVEAL_HTML:<div class="columns"><img class="top" src="./images/1d_reward.png" height="700" width="700"> </div>
+
+* 2D benchmarks
+#+REVEAL_HTML:<table><tr><td><img class="quad" src="./images/Rastrigin_function.png" width="640" height="480""></td><td><img class="quad" src="./images/Himmelblau_function.svg.png"></td></tr><tr><td><img class="quad" src="./images/page1-640px-Sphere_function_in_3D.pdf.jpg"></td><td><img class="quad" src="./images/page1-640px-Eggholder_function.pdf.jpg"></td></tr></table>
+* Zoom In
+
+#+REVEAL_HTML:<div class="columns"><img class="top" src="./images/search_zoom.png" width="1270" height="676"> </div>
+
+* 2D results
+
+#+REVEAL_HTML:<div class="columns"><img class="top" src="./images/fig2dplots2.png" width="1270*1.7" height="676*1.7"> </div>
+* Exploration routes (apply to CTRNN's)
+- (Yoder et al.) Generate Oscilations within CTRNN (size 10)
+- Reward inhibition/amplification: $\Delta$ reward does not change $\rightarrow$ seek new reward area, return after reward drought
+- Meta-Learning: Larger amplitude, slower timescale
+- Compression: Reconfigure new network to mimic the input-output of a larger network
+
+* Thank You!
