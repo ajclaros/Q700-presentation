@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Benchmarking the Reinforcement Learning Rule for Chaotically Varying Synaptic Weights</title>
+<meta name="author" content="Andrew Claros"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./dist/reveal.css"/>
+
+<link rel="stylesheet" href="./dist/theme/beige.css" id="theme"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<section class="title-slide">    <h1>Benchmarking the Reinforcement Learning Rule for Chaotically Varying Synaptic Weights</h1>  <h4>Andrew Claros</h4> </section>
+</section>
+<section>
+<section id="slide-org44cc1aa">
+<h2 id="org44cc1aa">Neuron anatomy</h2>
+<div class="columns"><img class="top" src="./images/dendritic-spine.png" height="700" width="600"> </div>
+</section>
+</section>
+<section>
+<section id="slide-orgd1eda83">
+<h2 id="orgd1eda83">Artificial Neural Network:</h2>
+<div class="columns"><img class="top" src="./images/ANN.jpeg" height="300" width="500"> </div>
+</section>
+</section>
+<section>
+<section id="slide-orga285952">
+<h2 id="orga285952">Gradient Descent</h2>
+<div class="columns"><img class="top" src="./images/gradient-descent.png" height="700" width="800"> </div>
+</section>
+</section>
+<section>
+<section id="slide-org3d8c75e">
+<h2 id="org3d8c75e">Chaotically Varying Synaptic Weights</h2>
+<ul>
+<li>\(W(t) = A\sin{2\pi \frac{t-\sum_{0}^{i}T_{i}}{T_{i}}}+C\)</li>
+<li>Phase of sine: \(T_{i} \in Normal(\mu,\sigma)\)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf62e647">
+<h2 id="orgf62e647">Chaotically Varying Synaptic Weights</h2>
+<ul>
+<li data-fragment-index="2" class="fragment appear"><img src="./images/wi_nocenter.png" alt="wi_nocenter.png" /></li>
+<li data-fragment-index="1" class="fragment appear">\(W(t) = 1\sin{2\pi \frac{t-\sum_{0}^{i}T_{i}}{T_{i}}}+0\)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org59032df">
+<h2 id="org59032df">Updating Weight Amplitude and Center</h2>
+<ul>
+<li data-fragment-index="1" class="fragment appear">Change in Center: \(\dot{C}=\alpha(W(t)-C)R(t)\)</li>
+<li data-fragment-index="2" class="fragment appear">Change in Amplitude: \(\dot{A}= -\beta R(t)\)</li>
+<li data-fragment-index="3" class="fragment appear">Reward function: \(R(t)= sign(f(W(t))-f(C(t-1)))\)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge60280a">
+<h2 id="orge60280a">Example:</h2>
+
+<div id="org969d6ec" class="figure">
+<p><img src="./images/sample_singauss.png" alt="sample_singauss.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org6ed4af8">
+<h2 id="org6ed4af8">Example:</h2>
+
+<div id="orgd631160" class="figure">
+<p><img src="./images/sample_singaussresult.png" alt="sample_singaussresult.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf70f8a6">
+<h2 id="orgf70f8a6">Updating Weight Amplitude and Center</h2>
+<ul data-fragment-index="4" class="fragment">
+<li><img src="./images/wi_center.png" alt="wi_center.png" /></li>
+
+</ul>
+<p data-fragment-index="1" class="fragment">
+Change in Center: \(\dot{C}=\alpha(W(t)-C)R(t)\) <br />
+Change in Amplitude: \(\dot{A}= -\beta R(t)\) <br />
+Reward function: \(R(t)= sign(f(W(t))-f(W(t-1)))\)
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org1afa8ac">
+<h2 id="org1afa8ac">1D benchmarks</h2>
+<div class="columns"><img class="top" src="./images/fig1_plots.png" height="700" width="700"> </div>
+</section>
+</section>
+<section>
+<section id="slide-org4b45e1d">
+<h2 id="org4b45e1d">1D results</h2>
+<div class="columns"><img class="top" src="./images/1d_reward.png" height="700" width="700"> </div>
+
+</section>
+</section>
+<section>
+<section id="slide-org761ff0e">
+<h2 id="org761ff0e">2D benchmarks</h2>
+<table><tr><td><img class="quad" src="./images/Rastrigin_function.png" width="640" height="480""></td><td><img class="quad" src="./images/Himmelblau_function.svg.png"></td></tr><tr><td><img class="quad" src="./images/page1-640px-Sphere_function_in_3D.pdf.jpg"></td><td><img class="quad" src="./images/page1-640px-Eggholder_function.pdf.jpg"></td></tr></table>
+</section>
+</section>
+<section>
+<section id="slide-org9f62b61">
+<h2 id="org9f62b61">Zoom In</h2>
+<div class="columns"><img class="top" src="./images/search_zoom.png" width="1270" height="676"> </div>
+
+</section>
+</section>
+<section>
+<section id="slide-org30604bd">
+<h2 id="org30604bd">2D results</h2>
+<div class="columns"><img class="top" src="./images/fig2dplots2.png" width="1270*1.7" height="676*1.7"> </div>
+</section>
+</section>
+<section>
+<section id="slide-org4b02b61">
+<h2 id="org4b02b61">Exploration routes (apply to CTRNN&rsquo;s)</h2>
+<ul>
+<li>(Yoder et al.) Generate Oscilations within CTRNN (size 10)</li>
+<li>Reward inhibition/amplification: \(\Delta\) reward does not change \(\rightarrow\) seek new reward area, return after reward drought</li>
+<li>Meta-Learning: Larger amplitude, slower timescale</li>
+<li>Compression: Reconfigure new network to mimic the input-output of a larger network</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org127db30">
+<h2 id="org127db30">Thank You!</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="./dist/reveal.js"></script>
+<script src="./plugin/markdown/markdown.js"></script>
+<script src="./plugin/notes/notes.js"></script>
+<script src="./plugin/search/search.js"></script>
+<script src="./plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1440,
+height: 2560,
+margin: 0.05,
+minScale: 1.50,
+maxScale: 5.50,
+
+transition: 'nil',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
